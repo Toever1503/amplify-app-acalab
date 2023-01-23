@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-saenggibuapp-dev-162125-authRole",
+      "UnauthRoleArn": "arn:aws:iam::293078692424:role/amplify-saenggibuapp-dev-162125-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::293078692424:role/amplify-saenggibuapp-dev-162125-authRole",
+      "Region": "ap-northeast-2",
+      "DeploymentBucketName": "amplify-saenggibuapp-dev-162125-deployment",
+      "UnauthRoleName": "amplify-saenggibuapp-dev-162125-unauthRole",
+      "StackName": "amplify-saenggibuapp-dev-162125",
+      "StackId": "arn:aws:cloudformation:ap-northeast-2:293078692424:stack/amplify-saenggibuapp-dev-162125/8c0efd80-9aee-11ed-950b-0aa1b1173b12",
+      "AmplifyAppId": "dw5hsb0rviael"
+    },
+    "categories": {
+      "api": {
+        "saenggibuapp": {}
+      },
+      "auth": {
+        "saenggibuappe043b41f": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dw5hsb0rviael",
+          "type": "manual"
+        }
+      }
+    }
+  }
+}
