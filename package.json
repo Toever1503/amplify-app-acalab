@@ -1,4 +1,9 @@
 {
+  "browser": {
+    "./dist/cjs/runtimeConfig": "./dist/cjs/runtimeConfig.browser",
+    "./dist/es/runtimeConfig": "./dist/es/runtimeConfig.browser"
+  },
+  
   "name": "saenggibu-app",
   "version": "0.0.0",
   "private": true,

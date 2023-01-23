@@ -17,12 +17,6 @@
       },
       "auth": {
         "saenggibuappe043b41f": {}
-      },
-      "hosting": {
-        "amplifyhosting": {
-          "appId": "dw5hsb0rviael",
-          "type": "manual"
-        }
       }
     }
   }
