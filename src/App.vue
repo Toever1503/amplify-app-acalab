@@ -18,7 +18,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
-      <h1>Hello {{ user.username }}!</h1>
+      <h1> 안녕하세요! {{ user.username }}!</h1>
       <button @click="signOut">Sign Out</button>
       <RouterView />
     </template>
