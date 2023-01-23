@@ -3,7 +3,7 @@
 This template should help get you started developing with Vue 3 in Vite.
 
 - 개발계:  [https://main.dw5hsb0rviael.amplifyapp.com](https://main.dw5hsb0rviael.amplifyapp.com/)
-- 운영계: [https;//saenggibu.co.kr](https;//saenggibu.co.kr)
+- 운영계: [https;//saenggibu.co.kr](https;//saenggibu.co.kr) -> 암호설정(ID:acalab, PASS:saenggibu)
 - [Amplify Console](https://ap-northeast-2.console.aws.amazon.com/amplify/home?region=ap-northeast-2#/dw5hsb0rviael/YmFja2VuZA/dev): Amplify 설정 및 CI/CD 관리
 - [Amplify Studio](https://ap-northeast-2.admin.amplifyapp.com/admin/dw5hsb0rviael/dev/home): Amplify Backend Admin 화면
 
@@ -31,7 +31,7 @@ amplify 설정
 amplify pull
 ```
 
-Access Key ID, Secret Access Key를 전달 받아 설정
+Access Key ID, Secret Access Key를 전달 받아 설정(AdministratorAccess-Amplify 권한)
 ```
 ? Select the authentication method you want to use: AWS access keys
 ? accessKeyId: ********************
