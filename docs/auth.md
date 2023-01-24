@@ -13,3 +13,4 @@
 - [cognito-kakao-example](https://github.com/haandol/cognito-kakao-example)
 - [Medium](https://medium.com/@parkopp/amazon-cognito%EB%A1%9C-%EC%8B%9C%EB%8F%84-%ED%95%B4-%EB%B3%B4%EB%8A%94-%EB%8B%A4%EC%96%91%ED%95%9C-%EB%B0%A9%EB%B2%95%EC%9D%98-%EC%86%8C%EC%85%9C-%EB%A1%9C%EA%B7%B8%EC%9D%B8-f81fa00b8c2e)
 - [OpenID Connect(OIDC) ID Token payload email 속성 연계](https://devtalk.kakao.com/t/openid-connect-oidc-id-token-payload-email/122501/4)
+- [Sample code - Gist](https://gist.github.com/geoseong/d67929c22e190125d5d14430e3eea39c)
