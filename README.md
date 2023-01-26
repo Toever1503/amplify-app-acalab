@@ -31,7 +31,7 @@ amplify 설정
 amplify pull
 ``` 
 
-Access Key ID, Secret Access Key를 전달 받아 설정(방법글 참고하여 관리자에게 요청)
+Access Key ID, Secret Access Key를 전달 받아 설정([방법글](https://github.com/acalab-web/saenggibu-app/blob/main/README.md#aws-%EA%B3%84%EC%A0%95%EC%97%90-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%B6%94%EA%B0%80-%EC%9A%94%EC%B2%AD%EA%B4%80%EB%A6%AC%EC%9E%90%EC%97%90%EA%B2%8C-%EC%9A%94%EC%B2%AD) 참고하여 관리자에게 요청)
 ```
 ? Select the authentication method you want to use: AWS access keys
 ? accessKeyId: ********************
