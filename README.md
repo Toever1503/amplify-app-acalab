@@ -31,6 +31,9 @@ amplify 설정
 amplify pull
 ```
 
+AWS 계정에 사용자 추가 요청(관리자에게 요청)
+![alt=사용자추가](/assets/user-creation.gif)
+
 Access Key ID, Secret Access Key를 전달 받아 설정(AdministratorAccess-Amplify 권한)
 ```
 ? Select the authentication method you want to use: AWS access keys
