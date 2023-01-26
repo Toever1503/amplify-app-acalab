@@ -27,40 +27,40 @@ import { listMembers} from '../graphql/queries';
 export default {
 name: 'App',
 async created() {
-this.getMembers();
+  this.getMembers();
 },
 data() {
-return {
- nick : '',
- introLine: '',
- password: '',
- bankAccount : '',
- email: '',
- members: []
-};
+  return {
+    nick : '',
+    introLine: '',
+    password: '',
+    bankAccount : '',
+    email: '',
+    members: []
+  };
 },
 methods: {
-async createMember() {
- const { nick, introLine, bankAccount, password, email } = this;
- if (!nick || !bankAccount || !password || !email) return;
- const member = { nick, introLine, bankAccount, password, email };
- this.members = [...this.members, member];
- await API.graphql({
-   query: createMember,
-   variables: { input: member}
- });
- this.nick = '';
- this.introLine = '';
- this.password = '';
- this.bankAccount = '';
- this.email = '';
-},
-async getMembers() {
- const members = await API.graphql({
-   query: listMembers
- });
- this.members = members.data.listMembers.items;
-}
+  async createMember() {
+    const { nick, introLine, bankAccount, password, email } = this;
+    if (!nick || !bankAccount || !password || !email) return;
+    const member = { nick, introLine, bankAccount, password, email };
+    this.members = [...this.members, member];
+    await API.graphql({
+      query: createMember,
+      variables: { input: member}
+    });
+    this.nick = '';
+    this.introLine = '';
+    this.password = '';
+    this.bankAccount = '';
+    this.email = '';
+  },
+  async getMembers() {
+    const members = await API.graphql({
+      query: listMembers
+    });
+    this.members = members.data.listMembers.items;
+  }
 }
 };
 </script>
