@@ -29,12 +29,9 @@ npm install
 amplify 설정
 ```
 amplify pull
-```
+``` 
 
-AWS 계정에 사용자 추가 요청(관리자에게 요청)
-![alt=사용자추가](/assets/user-creation.gif)
-
-Access Key ID, Secret Access Key를 전달 받아 설정(AdministratorAccess-Amplify 권한)
+Access Key ID, Secret Access Key를 전달 받아 설정(방법글 참고하여 관리자에게 요청)
 ```
 ? Select the authentication method you want to use: AWS access keys
 ? accessKeyId: ********************
@@ -109,7 +106,10 @@ amplify pull
 amplify push
 ```
 
-Helpful resources:
+## AWS 계정에 사용자 추가 요청(관리자에게 요청)
+![alt=사용자추가](/assets/user-creation.gif)
+
+## Helpful resources:
 - Amplify documentation: https://docs.amplify.aws
 - Amplify CLI documentation: https://docs.amplify.aws/cli
 - More details on this folder & generated files: https://docs.amplify.aws/cli/reference/files
