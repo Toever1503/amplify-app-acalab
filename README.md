@@ -107,6 +107,8 @@ amplify push
 ```
 
 ## AWS 계정에 사용자 추가 요청(관리자에게 요청)
+Access Key ID와 Secret Access Key 발급 후 전달
+
 ![alt=사용자추가](/assets/user-creation.gif)
 
 ## Helpful resources:
