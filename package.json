@@ -3,7 +3,6 @@
     "./dist/cjs/runtimeConfig": "./dist/cjs/runtimeConfig.browser",
     "./dist/es/runtimeConfig": "./dist/es/runtimeConfig.browser"
   },
-  
   "name": "saenggibu-app",
   "version": "0.0.0",
   "private": true,
@@ -18,6 +17,7 @@
   },
   "dependencies": {
     "@aws-amplify/ui-vue": "^3.1.4",
+    "@tosspayments/payment-sdk": "^1.4.0",
     "aws-amplify": "^5.0.11",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
