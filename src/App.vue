@@ -1,25 +1,30 @@
 <script setup>
-import { Authenticator } from '@aws-amplify/ui-vue';
-import '@aws-amplify/ui-vue/styles.css';
-import { RouterLink, RouterView } from 'vue-router'
+import { Authenticator } from "@aws-amplify/ui-vue";
+import "@aws-amplify/ui-vue/styles.css";
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
+    <img
+      alt="Vue logo"
+      class="logo"
+      src="@/assets/logo.svg"
+      width="125"
+      height="125"
+    />
   </header>
   <authenticator>
     <template v-slot="{ user, signOut }">
       <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/payment">결제</RouterLink>
-        <RouterLink to="/profile">Profile</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-      <h1> 안녕하세요! {{ user.username }}!</h1>
+        <nav>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/payment">결제</RouterLink>
+          <RouterLink to="/profile">Profile</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+        </nav>
+      </div>
+      <h1>안녕하세요! {{ user.username }}!</h1>
       <button @click="signOut">Sign Out</button>
       <RouterView />
     </template>
