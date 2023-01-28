@@ -1,19 +1,19 @@
 <script setup>
-import { Authenticator } from '@aws-amplify/ui-vue';
-import '@aws-amplify/ui-vue/styles.css';
-import { RouterLink, RouterView } from 'vue-router'
+import { Authenticator } from "@aws-amplify/ui-vue";
+import "@aws-amplify/ui-vue/styles.css";
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
   <authenticator>
     <template v-slot="{ user, signOut }">
       <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/payment">결제</RouterLink>
-        <RouterLink to="/profile">Profile</RouterLink>
-      </nav>
-    </div>
+        <nav>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/payment">결제</RouterLink>
+          <RouterLink to="/profile">Profile</RouterLink>
+        </nav>
+      </div>
       <button @click="signOut">Sign Out</button>
       <RouterView />
     </template>

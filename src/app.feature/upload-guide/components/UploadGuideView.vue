@@ -36,7 +36,7 @@
           >
             <img
               src="../../../assets/icon/btn-nice.png"
-              alt="낭리스 바로가기"
+              alt="나이스 바로가기"
               class="button-site"
             />
           </a>

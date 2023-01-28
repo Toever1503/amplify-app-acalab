@@ -1,5 +1,5 @@
 <template>
-  <Header :style="styleObject" />
+  <Header :style="styleObject" />  <!-- FIXME: use another name instead of header -->
   <div class="whole-page">
     <UploadGuideView
       v-for="step in steps"
