@@ -10,14 +10,6 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    },
-    {
       path: '/profile',
       name: 'profile',
       component: () => import('../views/Profile.vue')
@@ -26,7 +18,16 @@ const router = createRouter({
       path: '/payment',
       name: 'payment',
       component: () => import('../views/Payment.vue')
-    }
+    },
+    // FIXME: views 에 UploadGuide와 Profile 추가
+    // {
+    //   path: "/uploadguide",
+    //   component: () => import('../views/Payment.vue')
+    // },
+    // {
+    //   path: "/profile",
+    //   component: () => import('../views/Payment.vue')
+    // },
   ]
 })
 
