@@ -13,12 +13,11 @@
 import { loadTossPayments } from "@tosspayments/payment-sdk";
 
 const clientKey = "test_ck_P24xLea5zVANnxJ4AeyrQAMYNwW6";
-const tossPayments = await loadTossPayments(clientKey);
 
 export default {
   name: "App",
   async created() {
-    // this.getMembers();
+    //this.getMembers();
   },
   data() {
     return {
@@ -26,7 +25,6 @@ export default {
       orderId: "3hUKI8ssCr6uQqLXn0m0g",
       orderName: "송주원 생기부 외 2건",
       customerName: "김재철",
-      tossPayments: null,
     };
   },
   methods: {
@@ -34,17 +32,17 @@ export default {
       const { amount, orderId, orderName, customerName } = this;
       if (!amount || !orderId || !orderName || !customerName) return;
       const order = { amount, orderId, orderName, customerName };
-
+      const tossPayments = await loadTossPayments(clientKey);
       tossPayments
         .requestPayment(method, {
           amount: order.amount,
           orderId: order.orderId,
           orderName: order.orderName,
           customerName: order.customerName,
-          successUrl: `${location.origin}/success`, // FIXME: unexpected use of 'location'
-          failUrl: `${location.origin}/fail`,
+          successUrl: location.origin + "/success",
+          failUrl: location.origin + "/fail",
         })
-        .catch((error) => {
+        .catch(function (error) {
           if (error.code === "USER_CANCEL") {
             // 결제 고객이 결제창을 닫았을 때 에러 처리
           } else if (error.code === "INVALID_CARD_COMPANY") {
@@ -52,16 +50,12 @@ export default {
           }
         });
       this.amount = "";
-      this.orderId = "";
-      this.orderName = "";
-      this.customerName = "";
-    }
-
-    // FIXME: complete function
-    // async requestConfirm() {
-      // 승인 요청
-      // const order = await ...;
-    // },
+      (this.orderId = ""), (this.orderName = ""), (this.customerName = "");
+    },
+    async requestConfirm() {
+      //승인 요청
+      //const order = await ...;
+    },
   },
 };
 </script>

@@ -5,7 +5,11 @@ module.exports = {
   root: true,
   extends: [
     "plugin:vue/vue3-essential",
+<<<<<<< HEAD
     "airbnb-base",
+=======
+    "eslint:recommended",
+>>>>>>> main
     "@vue/eslint-config-prettier",
   ],
   overrides: [
