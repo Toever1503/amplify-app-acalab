@@ -1,5 +1,19 @@
 {
   "api": {
+    "kakaologin": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "kakaologin"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "saenggibuapp": {
       "dependsOn": [],
       "output": {
@@ -22,7 +36,26 @@
   "auth": {
     "saenggibuappe043b41f": {
       "customAuth": false,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "saenggibuappe043b41fPostConfirmation",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "saenggibuappe043b41fPreSignup",
+          "triggerProvider": "Cognito"
+        }
+      ],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
@@ -43,7 +76,99 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "saenggibuappe043b41f"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
     }
   },
-  "hosting": {}
+  "function": {
+    "kakaologin": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "saenggibuappe043b41fPostConfirmation": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "saenggibuappe043b41fPreSignup": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "hosting": {},
+  "parameters": {
+    "AMPLIFY_function_kakaologin_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "kakaologin"
+        }
+      ]
+    },
+    "AMPLIFY_function_kakaologin_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "kakaologin"
+        }
+      ]
+    },
+    "AMPLIFY_function_saenggibuappe043b41fPostConfirmation_GROUP": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "saenggibuappe043b41fPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_saenggibuappe043b41fPostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "saenggibuappe043b41fPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_saenggibuappe043b41fPostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "saenggibuappe043b41fPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_saenggibuappe043b41fPreSignup_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "saenggibuappe043b41fPreSignup"
+        }
+      ]
+    },
+    "AMPLIFY_function_saenggibuappe043b41fPreSignup_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "saenggibuappe043b41fPreSignup"
+        }
+      ]
+    }
+  }
 }

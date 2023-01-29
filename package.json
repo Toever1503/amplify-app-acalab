@@ -21,7 +21,10 @@
     "aws-amplify": "^5.0.11",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-kakao-sdk": "^0.2.5",
+    "vee-validate": "^4.5.11",
+    "vue-router": "^4.1.6",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",

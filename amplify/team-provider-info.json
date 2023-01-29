@@ -9,14 +9,32 @@
       "UnauthRoleName": "amplify-saenggibuapp-dev-162125-unauthRole",
       "StackName": "amplify-saenggibuapp-dev-162125",
       "StackId": "arn:aws:cloudformation:ap-northeast-2:293078692424:stack/amplify-saenggibuapp-dev-162125/8c0efd80-9aee-11ed-950b-0aa1b1173b12",
-      "AmplifyAppId": "dw5hsb0rviael"
+      "AmplifyAppId": "dw5hsb0rviael",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-saenggibuapp-dev-162125-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "api": {
-        "saenggibuapp": {}
+        "saenggibuapp": {},
+        "kakaologin": {}
       },
       "auth": {
-        "saenggibuappe043b41f": {}
+        "saenggibuappe043b41f": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "kakaologin": {
+          "deploymentBucketName": "amplify-saenggibuapp-dev-162125-deployment",
+          "s3Key": "amplify-builds/kakaologin-5276723644554a36587a-build.zip"
+        },
+        "saenggibuappe043b41fPostConfirmation": {
+          "GROUP": "",
+          "deploymentBucketName": "amplify-saenggibuapp-dev-162125-deployment",
+          "s3Key": "amplify-builds/saenggibuappe043b41fPostConfirmation-4a4d63313042576a3251-build.zip"
+        },
+        "saenggibuappe043b41fPreSignup": {
+          "deploymentBucketName": "amplify-saenggibuapp-dev-162125-deployment",
+          "s3Key": "amplify-builds/saenggibuappe043b41fPreSignup-3730764c68767366587a-build.zip"
+        }
       }
     }
   }

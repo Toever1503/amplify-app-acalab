@@ -1,12 +1,25 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { useAuthStore, useAlertStore } from '@/stores';
+import usersRoutes from './users.routes';
+import accountRoutes from './account.routes';
+import { Home } from '@/views';
 
-const router = createRouter({
+export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  linkActiveClass: 'active',
   routes: [
+    { path: '/', component: Home },
+    /*
     {
       path: "/",
       name: "home",
       component: () => import("../views/HomeView.vue"),
+    },
+    */
+    {
+      path: "/kakao",
+      name: "kakao",
+      component: () => import("../views/Kakaologin.vue"),
     },
     {
       path: "/about",
@@ -26,7 +39,26 @@ const router = createRouter({
       name: "payment",
       component: () => import("../views/Payment.vue"),
     },
+    { ...usersRoutes },
+    { ...accountRoutes },
+    { path: '/:pathMatch(.*)*', redirect: '/' }
   ],
 });
 
-export default router;
+router.beforeEach(async (to) => {
+  // clear alert on route change
+  const alertStore = useAlertStore();
+  alertStore.clear();
+
+  // redirect to login page if not logged in and trying to access a restricted page 
+  const publicPages = ['/account/login', '/account/register'];
+  const authRequired = !publicPages.includes(to.path);
+  const authStore = useAuthStore();
+
+  if (authRequired && !authStore.user) {
+      authStore.returnUrl = to.fullPath;
+      return '/account/login';
+  }
+});
+
+

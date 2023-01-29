@@ -1,7 +1,10 @@
 <script setup>
-import { Authenticator } from "@aws-amplify/ui-vue";
+import { Nav, Alert } from '@/components';
+import { Authenticator} from "@aws-amplify/ui-vue";
 import "@aws-amplify/ui-vue/styles.css";
 import { RouterLink, RouterView } from "vue-router";
+import { useAuthStore } from "@/stores";
+const authStore = useAuthStore();
 </script>
 
 <template>
@@ -14,11 +17,13 @@ import { RouterLink, RouterView } from "vue-router";
       height="125"
     />
   </header>
+  
   <authenticator>
     <template v-slot="{ user, signOut }">
       <div class="wrapper">
         <nav>
           <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/kakao">카카오</RouterLink>
           <RouterLink to="/payment">결제</RouterLink>
           <RouterLink to="/profile">Profile</RouterLink>
           <RouterLink to="/about">About</RouterLink>
@@ -26,12 +31,23 @@ import { RouterLink, RouterView } from "vue-router";
       </div>
       <h1>안녕하세요! {{ user.username }}!</h1>
       <button @click="signOut">Sign Out</button>
-      <RouterView />
+    
     </template>
   </authenticator>
-</template>
 
+ 
+    <div class="app-container" :class="authStore.user && 'bg-light'">
+        <Nav />
+        <Alert />
+        <div class="container pt-4 pb-4">
+            <router-view />
+        </div>
+    </div>
+   
+
+</template>
 <style scoped>
+
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -92,5 +108,14 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+}
+.app-container {
+    min-height: 350px;
+}
+
+.btn-delete-user {
+    width: 40px;
+    text-align: center;
+    box-sizing: content-box;
 }
 </style>
