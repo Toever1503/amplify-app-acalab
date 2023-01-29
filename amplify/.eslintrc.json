@@ -1,0 +1,17 @@
+{
+    "root": true,
+    
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 11
+    },
+    "env": {
+        "node": true
+      },
+    "rules": {
+        "no-undef":"off"
+    }
+  }

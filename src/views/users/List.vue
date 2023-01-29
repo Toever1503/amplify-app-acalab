@@ -1,25 +1,27 @@
 <script setup>
-import { storeToRefs } from 'pinia';
-import { useUsersStore } from '@/stores';
+// import { storeToRefs } from "pinia";
+import { useUsersStore } from "@/stores";
 const usersStore = useUsersStore();
-const { users } = storeToRefs(usersStore);
+// const { users } = storeToRefs(usersStore);
 usersStore.getAll();
 </script>
 
 <template>
-    <h1>Users</h1>
-    <router-link to="/users/add" class="btn btn-sm btn-success mb-2">Add User</router-link>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th style="width: 30%">First Name</th>
-                <th style="width: 30%">Last Name</th>
-                <th style="width: 30%">Username</th>
-                <th style="width: 10%"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <!--
+  <h1>Users</h1>
+  <router-link to="/users/add" class="btn btn-sm btn-success mb-2"
+    >Add User</router-link
+  >
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th style="width: 30%">First Name</th>
+        <th style="width: 30%">Last Name</th>
+        <th style="width: 30%">Username</th>
+        <th style="width: 10%"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--
             <template v-if="users.length">
                 <tr v-for="user in users" :key="user.id">
                     <td>{{ user.firstName }}</td>
@@ -45,7 +47,7 @@ usersStore.getAll();
                 </td>
             </tr>            
         -->
-        <h1>Logged In</h1>
-        </tbody>
-    </table>
+      <h1>Logged In</h1>
+    </tbody>
+  </table>
 </template>

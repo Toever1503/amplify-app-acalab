@@ -1,0 +1,4 @@
+> git pull --tags origin feat/kakao-login
+From https://github.com/acalab-web/saenggibu-app
+ * branch            feat/kakao-login -> FETCH_HEAD
+fatal: Not possible to fast-forward, aborting.

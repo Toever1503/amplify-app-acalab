@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { useAuthStore, useAlertStore } from '@/stores';
-import usersRoutes from './users.routes';
-import accountRoutes from './account.routes';
-import { Home } from '@/views';
+import { useAuthStore, useAlertStore } from "@/stores";
+import usersRoutes from "./users.routes";
+import accountRoutes from "./account.routes";
+import { Home } from "@/views";
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  linkActiveClass: 'active',
+  linkActiveClass: "active",
   routes: [
-    { path: '/', component: Home },
+    { path: "/", component: Home },
     /*
     {
       path: "/",
@@ -41,7 +41,7 @@ export const router = createRouter({
     },
     { ...usersRoutes },
     { ...accountRoutes },
-    { path: '/:pathMatch(.*)*', redirect: '/' }
+    { path: "/:pathMatch(.*)*", redirect: "/" },
   ],
 });
 
@@ -50,15 +50,13 @@ router.beforeEach(async (to) => {
   const alertStore = useAlertStore();
   alertStore.clear();
 
-  // redirect to login page if not logged in and trying to access a restricted page 
-  const publicPages = ['/account/login', '/account/register'];
+  // redirect to login page if not logged in and trying to access a restricted page
+  const publicPages = ["/account/login", "/account/register"];
   const authRequired = !publicPages.includes(to.path);
   const authStore = useAuthStore();
 
   if (authRequired && !authStore.user) {
-      authStore.returnUrl = to.fullPath;
-      return '/account/login';
+    authStore.returnUrl = to.fullPath;
+    return "/account/login";
   }
 });
-
-
