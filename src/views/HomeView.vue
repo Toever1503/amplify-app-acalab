@@ -1,8 +1,5 @@
-<script setup>
-import UploadGuide from "./UploadGuide.vue";
-</script>
+<script setup></script>
 
 <template>
   <main>안녕하세요</main>
-  <UploadGuide />
 </template>

@@ -61,10 +61,7 @@
           />
         </div>
         <img
-          :src="
-            require(`../../../assets/provider_site/${osType}/step${stepNumber}.png`)
-              .default
-          "
+          :src="`/provider_site/${osType}/step${stepNumber}.png`"
           alt="step별이미지"
         />
         <UploadGuidePagination :stepNumber="stepNumber" />

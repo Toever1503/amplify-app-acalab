@@ -6,7 +6,9 @@
         <TextView class="heading32" text="다운받은 생기부를 업로드 해주세요!" />
       </div>
       <Dropzone @drop.prevent="drop" @change="selectedFile"></Dropzone>
-      <div class="file-info" v-if="!!name">File : {{ dropzoneFile.name }}</div>
+      <div class="file-info" v-if="dropzoneFile.name">
+        File : {{ dropzoneFile.name }}
+      </div>
       <div class="box-text">
         <TextView class="heading24" text="잠깐!" />
         <div class="text-alert">
