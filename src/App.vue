@@ -1,34 +1,23 @@
 <script setup>
 import { Authenticator } from "@aws-amplify/ui-vue";
-import "@aws-amplify/ui-vue/styles.css";
+// import "@aws-amplify/ui-vue/styles.css";  // FIXME: no such path
 import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-  </header>
-  <authenticator>
-    <template v-slot="{ user, signOut }">
+  <Authenticator>
+    <template v-slot="{ signOut }">
       <div class="wrapper">
         <nav>
           <RouterLink to="/">Home</RouterLink>
           <RouterLink to="/payment">결제</RouterLink>
           <RouterLink to="/profile">Profile</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
         </nav>
       </div>
-      <h1>안녕하세요! {{ user.username }}!</h1>
       <button @click="signOut">Sign Out</button>
       <RouterView />
     </template>
-  </authenticator>
+  </Authenticator>
 </template>
 
 <style scoped>
