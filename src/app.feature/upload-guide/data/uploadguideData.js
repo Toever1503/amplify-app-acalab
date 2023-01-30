@@ -1,4 +1,4 @@
-const dummy = (os) => {
+const uploadguideData = (os) => {
   const macData = [
     {
       type: "mac",
@@ -105,4 +105,4 @@ const dummy = (os) => {
   return os === "Mac" ? macData : windowsData;
 };
 
-export default dummy;
+export default uploadguideData;

@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="logo">
-      <img src="../assets/header_logo_color.png" alt="로고" />
+      <img src="../../public/header_logo_color.png" alt="로고" />
     </div>
     <address class="address">
       <div class="company-name">그들의 생기부</div>
