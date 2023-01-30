@@ -36,9 +36,9 @@
 
 <script>
 import { ref } from "vue";
-import TextView from "~/components/TextView.vue";
-import PageButton from "~/components/PageButton.vue";
-import Dropzone from "~/components/Dropzone.vue";
+import TextView from "../../../app.component/TextView.vue";
+import PageButton from "../../../app.component/PageButton.vue";
+import Dropzone from "../../../app.component/Dropzone.vue";
 
 export default {
   components: { TextView, PageButton, Dropzone },

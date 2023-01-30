@@ -1,5 +1,6 @@
 <template>
-  <Header :style="styleObject" />  <!-- FIXME: use another name instead of header -->
+  <!-- <Header :style="styleObject" /> -->
+  <!-- FIXME: use another name instead of header -->
   <div class="whole-page">
     <UploadGuideView
       v-for="step in steps"
@@ -13,10 +14,10 @@
   <UploadGuideFileUpload />
 </template>
 <script>
-import Header from "~/components/Header.vue";
-import { dummy } from "../utils/uploadguide-data";
+// import Header from "../../../app.component/Header.vue";  // FIXME: change the name of the component
+import dummy from "../utils/uploadguide-data";
 import UploadGuideView from "../components/UploadGuideView.vue";
-import ToTopButton from "../../../components/ToTopButton.vue";
+import ToTopButton from "../../../app.component/ToTopButton.vue";
 import UploadGuideFileUpload from "../components/UploadGuideFileUpload.vue";
 
 export default {
@@ -29,7 +30,7 @@ export default {
     };
   },
   components: {
-    Header,
+    // Header,
     UploadGuideView,
     ToTopButton,
     UploadGuideFileUpload,

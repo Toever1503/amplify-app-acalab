@@ -76,7 +76,7 @@
   </div>
 </template>
 <script>
-import TextView from "~/components/TextView.vue";
+import TextView from "../../../app.component/TextView.vue";
 import UploadGuidePagination from "./UploadGuidePagination.vue";
 
 export default {

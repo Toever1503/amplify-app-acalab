@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import TextView from "~/components/TextView.vue";
+import TextView from "../../../app.component/TextView.vue";
 
 export default {
   components: {

@@ -1,3 +1,4 @@
+<!-- FIXME: change name of the logo component -->
 <template>
   <RouterLink to="/" class="logo">
     <img src="../assets/header_logo_color.png" alt="logo" />

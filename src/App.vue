@@ -1,12 +1,12 @@
 <script setup>
 import { Authenticator } from "@aws-amplify/ui-vue";
-import "@aws-amplify/ui-vue/styles.css";
+// import "@aws-amplify/ui-vue/styles.css";  // FIXME: no such path
 import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <authenticator>
-    <template v-slot="{ user, signOut }">
+  <Authenticator>
+    <template v-slot="{ signOut }">
       <div class="wrapper">
         <nav>
           <RouterLink to="/">Home</RouterLink>
@@ -17,7 +17,7 @@ import { RouterLink, RouterView } from "vue-router";
       <button @click="signOut">Sign Out</button>
       <RouterView />
     </template>
-  </authenticator>
+  </Authenticator>
 </template>
 
 <style scoped>

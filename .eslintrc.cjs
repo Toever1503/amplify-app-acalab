@@ -1,17 +1,18 @@
 /* eslint-env node */
+// eslint-disable-next-line import/no-extraneous-dependencies
 require("@rushstack/eslint-patch/modern-module-resolution");
 
 module.exports = {
   root: true,
   extends: [
     "plugin:vue/vue3-essential",
-<<<<<<< HEAD
     "airbnb-base",
-=======
-    "eslint:recommended",
->>>>>>> main
     "@vue/eslint-config-prettier",
   ],
+  rules: {
+    "prefer-destructuring": "off",
+    "vue/multi-word-component-names": "off",
+  },
   overrides: [
     {
       files: ["cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}"],

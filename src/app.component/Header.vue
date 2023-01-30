@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import Logo from "./Logo.vue";
+import Logo from "./LogoTest.vue";
 
 export default {
   components: {

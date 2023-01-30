@@ -17,7 +17,7 @@ const clientKey = "test_ck_P24xLea5zVANnxJ4AeyrQAMYNwW6";
 export default {
   name: "App",
   async created() {
-    //this.getMembers();
+    // this.getMembers();
   },
   data() {
     return {
@@ -39,10 +39,10 @@ export default {
           orderId: order.orderId,
           orderName: order.orderName,
           customerName: order.customerName,
-          successUrl: location.origin + "/success",
-          failUrl: location.origin + "/fail",
+          // successUrl: `${location.origin}/success`,  // FIXME: no global location
+          // failUrl: `${location.origin}/fail`,
         })
-        .catch(function (error) {
+        .catch((error) => {
           if (error.code === "USER_CANCEL") {
             // 결제 고객이 결제창을 닫았을 때 에러 처리
           } else if (error.code === "INVALID_CARD_COMPANY") {
@@ -50,11 +50,13 @@ export default {
           }
         });
       this.amount = "";
-      (this.orderId = ""), (this.orderName = ""), (this.customerName = "");
+      this.orderId = "";
+      this.orderName = "";
+      this.customerName = "";
     },
     async requestConfirm() {
-      //승인 요청
-      //const order = await ...;
+      // 승인 요청
+      // const order = await ...;
     },
   },
 };

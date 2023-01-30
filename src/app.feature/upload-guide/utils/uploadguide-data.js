@@ -1,4 +1,4 @@
-export const dummy = (os) => {
+const dummy = (os) => {
   const macData = [
     {
       type: "mac",
@@ -104,3 +104,5 @@ export const dummy = (os) => {
 
   return os === "Mac" ? macData : windowsData;
 };
+
+export default dummy;

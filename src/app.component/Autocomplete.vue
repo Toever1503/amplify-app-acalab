@@ -55,15 +55,10 @@ export default {
   },
   methods: {
     imgClick() {
-      console.log(this.order);
       this.$emit("imgClick", this.order);
-    },
-    selectMajor() {
-      console.log(this.valueUniv);
     },
   },
   updated() {
-    console.log(this.valueUniv);
     if (this.valueUniv === "1") {
       this.sourceMajor = this.sourceMajor1;
     } else if (this.valueUniv === null) {
