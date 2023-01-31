@@ -3,8 +3,9 @@
     <button
       v-for="(item, index) in items"
       :key="item"
-      :class="{ active: index + 1 === tapNumber }"
+      :class="{ active: tapNumber === index + 1 }"
       class="tap-item"
+      @click="clickTap(index)"
     >
       {{ item }}
     </button>
@@ -28,6 +29,12 @@ export default {
   props: {
     tapNumber: Number,
   },
+  methods: {
+    clickTap(index) {
+      const clickedTapNumber = index + 1;
+      this.$emit("clickTap", clickedTapNumber);
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -40,10 +47,13 @@ export default {
     border-style: none;
     border-bottom: 1px solid #d9d9d9;
     border-top: 1px solid #d9d9d9;
+    font-size: 18px;
+    font-weight: 400;
     color: #666;
     &.active {
       color: #000;
       font-weight: 600;
+      border-bottom: 3px solid #888cff;
     }
   }
 }

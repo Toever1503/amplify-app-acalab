@@ -5,7 +5,7 @@
     <ProfileHeaderView />
     <ProfileOverallReviewView />
   </div>
-  <ProfileTap />
+  <ProfileTap @clickTap="changeComponents" :tapNumber="tapNumber" />
 </template>
 
 <script>
@@ -15,11 +15,22 @@ import ProfileOverallReviewView from "../components/ProfileOverallReviewView.vue
 import ProfileTap from "../components/ProfileTap.vue";
 
 export default {
+  data() {
+    return {
+      tapNumber: 1,
+    };
+  },
   components: {
     Header,
     ProfileHeaderView,
     ProfileTap,
     ProfileOverallReviewView,
+  },
+  methods: {
+    changeComponents(clickedTapIndex) {
+      const clickedTapNumber = clickedTapIndex + 1;
+      this.tapNumber = clickedTapNumber;
+    },
   },
 };
 </script>
