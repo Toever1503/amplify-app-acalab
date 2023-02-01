@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-console */
 /**
  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
  */

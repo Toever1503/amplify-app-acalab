@@ -1,3 +1,6 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-shadow */
 const aws = require("aws-sdk");
 
 const cognitoidentityserviceprovider = new aws.CognitoIdentityServiceProvider({

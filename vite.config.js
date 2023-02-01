@@ -10,8 +10,8 @@ export default defineConfig({
   resolve: {
     alias: [
       // "@": fileURLToPath(new URL("./src", import.meta.url)),
-      { find: "~", replacement: path.resolve(__dirname, "./src")},
-      { find: './runtimeConfig', replacement: './runtimeConfig.browser'},
+      { find: "~", replacement: path.resolve(__dirname, "./src") },
+      { find: "./runtimeConfig", replacement: "./runtimeConfig.browser" },
     ],
   },
   build: {

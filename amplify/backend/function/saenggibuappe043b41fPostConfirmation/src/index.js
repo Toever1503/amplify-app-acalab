@@ -13,6 +13,7 @@ const moduleNames = process.env.MODULES.split(",");
 /**
  * The array of imported modules.
  */
+// eslint-disable-next-line import/no-dynamic-require, global-require
 const modules = moduleNames.map((name) => require(`./${name}`));
 
 /**
