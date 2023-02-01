@@ -32,8 +32,9 @@ export default {
   },
   computed: {
     currentTab() {
+      const currentComponent = this.$store.state.profile.profileTab;
       return defineAsyncComponent(() =>
-        import(`../components/${this.$store.state.profile.profileTab}.vue`)
+        import(`../components/${currentComponent}.vue`)
       );
     },
   },

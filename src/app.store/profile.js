@@ -1,9 +1,9 @@
 export default {
   namespaced: true,
   // data
-  state: () => ({
+  state: {
     profileTab: "ProfileCourseWorkView",
-  }),
+  },
   // computed
   getters: {},
   // method
