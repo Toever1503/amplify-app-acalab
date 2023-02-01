@@ -86,6 +86,7 @@ export default {
   border: 1px solid #d9d9d9;
   border-radius: 10px;
   .header-middlebox {
+    width: calc(384% / 9);
     display: flex;
     flex-direction: column;
     gap: 24px;
