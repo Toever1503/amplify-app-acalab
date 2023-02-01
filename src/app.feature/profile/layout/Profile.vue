@@ -1,14 +1,18 @@
 <template>
   <Header />
-  <div class="common-container">
+  <div class="commoninfo-container">
     <h1>합격생 프로필</h1>
     <ProfileHeaderView />
     <ProfileOverallReviewView />
   </div>
-  <ProfileTap @clickTap="changeComponents" :tapNumber="tapNumber" />
+  <div class="schoolrecord-container">
+    <ProfileTap @clickTap="changeComponents" :tapNumber="tapNumber" />
+    <component :is="currentTab" />
+  </div>
 </template>
 
 <script>
+import { defineAsyncComponent } from "vue";
 import Header from "../../../app.component/Header.vue";
 import ProfileHeaderView from "../components/ProfileHeaderView.vue";
 import ProfileOverallReviewView from "../components/ProfileOverallReviewView.vue";
@@ -18,6 +22,8 @@ export default {
   data() {
     return {
       tapNumber: 1,
+      tap: "ProfileCourseWorkView",
+      // taps: ["ProfileCourseWorkView", "ProfileHopeCareerView"],
     };
   },
   components: {
@@ -26,17 +32,23 @@ export default {
     ProfileTap,
     ProfileOverallReviewView,
   },
+  computed: {
+    currentTab() {
+      return defineAsyncComponent(() =>
+        import(`../components/${this.tap}.vue`)
+      );
+    },
+  },
   methods: {
-    changeComponents(clickedTapIndex) {
-      const clickedTapNumber = clickedTapIndex + 1;
+    changeComponents(clickedTapNumber) {
       this.tapNumber = clickedTapNumber;
     },
   },
 };
 </script>
 <style lang="scss">
-.common-container {
-  width: 900px;
+.commoninfo-container {
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -47,5 +59,10 @@ export default {
     font-weight: 600;
     margin: 0;
   }
+}
+.schoolrecord-container {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
 }
 </style>

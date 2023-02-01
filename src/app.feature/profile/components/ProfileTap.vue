@@ -39,10 +39,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 .tap-profile {
+  width: 100%;
   display: flex;
   .tap-item {
     background-color: #fff;
-    width: 150px;
+    width: calc(100% / 6);
     height: 48px;
     border-style: none;
     border-bottom: 1px solid #d9d9d9;
