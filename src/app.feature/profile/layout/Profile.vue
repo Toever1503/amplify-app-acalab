@@ -19,11 +19,6 @@ import ProfileOverallReviewView from "../components/ProfileOverallReviewView.vue
 import ProfileTab from "../components/ProfileTab.vue";
 
 export default {
-  data() {
-    return {
-      tabName: "ProfileCourseWorkView",
-    };
-  },
   components: {
     Header,
     ProfileHeaderView,
@@ -38,7 +33,6 @@ export default {
       );
     },
   },
-  methods: {},
 };
 </script>
 <style lang="scss">

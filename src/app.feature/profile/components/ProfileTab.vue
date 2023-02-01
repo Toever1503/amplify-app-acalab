@@ -1,32 +1,25 @@
 <template>
   <div class="tab-profile">
     <button
-      v-for="tab in tabs"
-      :key="tab.tabText"
-      :class="{ active: this.$store.state.profile.profileTab === tab.tabName }"
+      v-for="{ tabName, tabText } in tabItems"
+      :key="tabText"
+      :class="{ active: this.$store.state.profile.profileTab === tabName }"
       class="tab-item"
-      @click="changeCurrentTab(tab)"
+      @click="changeCurrentTab(tabName)"
     >
-      {{ tab.tabText }}
+      {{ tabText }}
     </button>
   </div>
 </template>
 
 <script>
+import profileTabItemData from "../data/profileTabItemData";
+
 export default {
   data() {
+    const tabItems = profileTabItemData;
     return {
-      tabs: [
-        { tabName: "ProfileCourseWorkView", tabText: "교과 영역" },
-        { tabName: "ProfileHopeCareerView", tabText: "진로 영역" },
-        { tabName: "ProfileAutonomousActView", tabText: "자율 활동" },
-        { tabName: "ProfileClubActView", tabText: "동아리 활동" },
-        {
-          tabName: "ProfileAttendanceAndBehaviorView",
-          tabText: "출결 및 행동특성",
-        },
-        { tabName: "Profile2024TrendView", tabText: "2024 입시 정복✨" },
-      ],
+      tabItems,
     };
   },
   methods: {
