@@ -12,6 +12,8 @@ module.exports = {
   rules: {
     "prefer-destructuring": "off",
     "vue/multi-word-component-names": "off",
+    "vue/no-reserved-component-names": "off",
+    "import/no-unresolved": "off",
   },
   overrides: [
     {

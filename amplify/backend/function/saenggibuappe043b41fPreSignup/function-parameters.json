@@ -1,0 +1,17 @@
+{
+  "trigger": true,
+  "modules": [
+    "custom"
+  ],
+  "parentResource": "saenggibuappe043b41f",
+  "functionName": "saenggibuappe043b41fPreSignup",
+  "resourceName": "saenggibuappe043b41fPreSignup",
+  "parentStack": "auth",
+  "triggerEnvs": "[]",
+  "triggerDir": "/snapshot/repo/build/node_modules/@aws-amplify/amplify-category-auth/provider-utils/awscloudformation/triggers/PreSignup",
+  "triggerTemplate": "PreSignup.json.ejs",
+  "triggerEventPath": "PreSignup.event.json",
+  "roleName": "saenggibuappe043b41fPreSignup",
+  "skipEdit": true,
+  "enableCors": false
+}
