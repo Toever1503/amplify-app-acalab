@@ -1,14 +1,11 @@
 <template>
   <div class="header-container">
-    <img
-      src="../../../../public/icon/profileimg-yennie.png"
-      alt="프로필 이미지"
-    />
+    <img src="../../../../icon/profileimg-yennie.png" alt="프로필 이미지" />
     <div class="header-middlebox">
       <div class="name-container">
         <div class="badge-box">
-          <img src="../../../../public/icon/verif1.png" alt="본인인증 뱃지" />
-          <img src="../../../../public/icon/verif2.png" alt="합격인증 뱃지" />
+          <img src="../../../../icon/verif1.png" alt="본인인증 뱃지" />
+          <img src="../../../../icon/verif2.png" alt="합격인증 뱃지" />
         </div>
         <TextView class="heading28" :text="nickName" />
         <TextView class="strong16" :text="enrolledUniversity" />
