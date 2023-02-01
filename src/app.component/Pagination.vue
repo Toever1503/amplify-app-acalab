@@ -8,7 +8,7 @@
           @mouseover="preOver"
           class="btn-prev:none"
         >
-          <img src="../assets/icon/btn-arrow.png" alt="none" />
+          <img src="/icon/btn-arrow.png" alt="none" />
         </RouterLink>
         <RouterLink
           :to="prePage"
@@ -16,7 +16,7 @@
           @mouseleave="preLeave"
           class="btn-prev:hover"
         >
-          <img src="../assets/icon/btn-arrow-hover.png" alt="none" />
+          <img src="/icon/btn-arrow-hover.png" alt="none" />
         </RouterLink>
       </div>
       <span>이전으로</span>
@@ -30,7 +30,7 @@
           @mouseover="nextOver"
           class="btn-prev:none"
         >
-          <img src="../assets/icon/btn-arrow.png" alt="none" />
+          <img src="/icon/btn-arrow.png" alt="none" />
         </RouterLink>
         <RouterLink
           :to="nextPage"
@@ -38,7 +38,7 @@
           @mouseleave="nextLeave"
           class="btn-prev:hover"
         >
-          <img src="../assets/icon/btn-arrow-hover.png" alt="none" />
+          <img src="/icon/btn-arrow-hover.png" alt="none" />
         </RouterLink>
       </div>
     </div>

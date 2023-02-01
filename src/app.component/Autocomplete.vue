@@ -1,11 +1,6 @@
 <template>
   <div class="input-row">
-    <img
-      emit
-      src="../assets/icon/delete-gray.png"
-      alt="delete"
-      @click="imgClick"
-    />
+    <img emit src="/icon/delete-gray.png" alt="delete" @click="imgClick" />
     <VueMultiselect
       class="input-univ"
       v-model="valueUniv"

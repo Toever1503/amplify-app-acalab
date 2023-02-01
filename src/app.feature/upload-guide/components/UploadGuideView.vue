@@ -23,19 +23,22 @@
           <a
             v-if="stepNumber === 1 && osType === 'mac'"
             href="https://www.gov.kr/nlogin/?Mcode=10003"
+            target="_blank"
           >
             <img
-              src="../../../../icon/btn-jungboo24.png"
+              src="/icon/btn-jungboo24.png"
               alt="정부24 바로가기"
               class="button-site"
+              black
             />
           </a>
           <a
             v-if="stepNumber === 1 && osType === 'windows'"
             href="https://www.neis.go.kr/pas_mms_nv99_001.do"
+            target="_blank"
           >
             <img
-              src="../../../../icon/btn-nice.png"
+              src="/icon/btn-nice.png"
               alt="나이스 바로가기"
               class="button-site"
             />
@@ -68,7 +71,7 @@
       </div>
     </div>
     <div class="scroll-icon">
-      <img src="../../../../icon/chevron_down-gray.png" alt="스크롤 하기" />
+      <img src="/icon/chevron_down-gray.png" alt="스크롤 하기" />
     </div>
   </div>
 </template>
