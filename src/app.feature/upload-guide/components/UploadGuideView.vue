@@ -24,23 +24,24 @@
             v-if="stepNumber === 1 && osType === 'mac'"
             href="https://www.gov.kr/nlogin/?Mcode=10003"
             target="_blank"
+            role="button"
           >
             <img
               src="/icon/btn-jungboo24.png"
               alt="정부24 바로가기"
-              class="button-site"
-              black
+              class="img img-jungboo24"
             />
           </a>
           <a
             v-if="stepNumber === 1 && osType === 'windows'"
             href="https://www.neis.go.kr/pas_mms_nv99_001.do"
             target="_blank"
+            role="button"
           >
             <img
               src="/icon/btn-nice.png"
               alt="나이스 바로가기"
-              class="button-site"
+              class="img img-nice"
             />
           </a>
           <div v-if="stepNumber === 1" class="text-alert">
@@ -143,10 +144,11 @@ export default {
         }
         a {
           width: 180px;
+          img {
+            width: 100%;
+          }
         }
-        .button-site {
-          width: 100%;
-        }
+
         .text-alert {
           display: inline-block;
           font-size: 0.75rem;

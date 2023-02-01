@@ -3,12 +3,9 @@
     <button
       v-for="tab in tabs"
       :key="tab.tabText"
-      :class="{ active: tabName === tab.tabName }"
+      :class="{ active: this.$store.state.profile.profileTab === tab.tabName }"
       class="tab-item"
-      @click="
-        clickTab(tab.tabName);
-        changeCurrentTab(tab);
-      "
+      @click="changeCurrentTab(tab)"
     >
       {{ tab.tabText }}
     </button>
@@ -25,20 +22,14 @@ export default {
         { tabName: "ProfileAutonomousActView", tabText: "자율 활동" },
         { tabName: "ProfileClubActView", tabText: "동아리 활동" },
         {
-          tabName: "ProfileAttendance&BehaviorView",
+          tabName: "ProfileAttendanceAndBehaviorView",
           tabText: "출결 및 행동특성",
         },
         { tabName: "Profile2024TrendView", tabText: "2024 입시 정복✨" },
       ],
     };
   },
-  props: {
-    tabName: String,
-  },
   methods: {
-    clickTab(CurrentTab) {
-      this.$emit("clickTab", CurrentTab);
-    },
     changeCurrentTab(CurrentTab) {
       this.$store.commit("profile/changeCurrentTab", CurrentTab);
     },

@@ -6,7 +6,7 @@
     <ProfileOverallReviewView />
   </div>
   <div class="schoolrecord-container">
-    <ProfileTab @clickTab="changeComponents" :tabName="tabName" />
+    <ProfileTab />
     <component :is="currentTab" />
   </div>
 </template>
@@ -38,11 +38,7 @@ export default {
       );
     },
   },
-  methods: {
-    changeComponents(clickedtabName) {
-      this.tabName = clickedtabName;
-    },
-  },
+  methods: {},
 };
 </script>
 <style lang="scss">
