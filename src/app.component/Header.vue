@@ -4,7 +4,7 @@
       <Logo />
       <div class="nav">
         <div v-for="nav in navigations" v-bind:key="nav.name" class="nav__item">
-          <RouterLink :to="nav.href" class="nav__link">
+          <RouterLink :to="nav.href" class="nav__link" role="button">
             {{ nav.name }}
           </RouterLink>
         </div>

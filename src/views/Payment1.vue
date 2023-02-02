@@ -1,6 +1,6 @@
 <template>
-  <Payment />
+  <PaymentView />
 </template>
 <script setup>
-import Payment from "~/app.feature/payment/layout/Payment.vue";
+import PaymentView from "~/app.feature/payment/layout/PaymentView.vue";
 </script>
