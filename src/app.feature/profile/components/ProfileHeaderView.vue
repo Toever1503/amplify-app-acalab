@@ -20,22 +20,22 @@
       <div class="box-purple">구매 완료!🎉</div>
     </div>
     <div class="header-lastbox">
-      <p>{{ region }} | {{ highschoolType }}&ensp;<span>졸업</span></p>
+      <p>{{ region }} | {{ highSchoolType }}&ensp;<span>졸업</span></p>
       <p>지원 대학</p>
-      <div class="univs-box">
+      <div class="universities-box">
         <div
-          v-for="univ in acceptedUniversitys"
-          :key="univ"
-          class="univ-icon accepted"
+          v-for="university in acceptedUniversities"
+          :key="university"
+          class="university-icon accepted"
         >
-          {{ univ }}
+          {{ university }}
         </div>
         <div
-          v-for="univ in rejectedUniversitys"
-          :key="univ"
-          class="univ-icon rejected"
+          v-for="university in rejectedUniversities"
+          :key="university"
+          class="university-icon rejected"
         >
-          {{ univ }}
+          {{ university }}
         </div>
       </div>
     </div>
@@ -56,18 +56,18 @@ export default {
       enrolledUniversity,
       selfIntroduction,
       region,
-      rejectedUniversitys,
-      acceptedUniversitys,
-      highschoolType,
+      rejectedUniversities,
+      acceptedUniversities,
+      highSchoolType,
     } = profileHeaderData;
     return {
       nickName,
       enrolledUniversity,
       selfIntroduction,
       region,
-      rejectedUniversitys,
-      acceptedUniversitys,
-      highschoolType,
+      rejectedUniversities,
+      acceptedUniversities,
+      highSchoolType,
     };
   },
 };
@@ -128,11 +128,11 @@ export default {
         font-weight: 400;
       }
     }
-    .univs-box {
+    .universities-box {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      .univ-icon {
+      .university-icon {
         width: 48px;
         height: 48px;
         display: flex;

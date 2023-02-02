@@ -6,7 +6,7 @@
     <ProfileOverallReviewView />
   </div>
   <div class="schoolrecord-container">
-    <ProfileTab @clickTab="changeComponents" :tabName="tabName" />
+    <ProfileTab />
     <component :is="currentTab" />
   </div>
 </template>
@@ -19,11 +19,6 @@ import ProfileOverallReviewView from "../components/ProfileOverallReviewView.vue
 import ProfileTab from "../components/ProfileTab.vue";
 
 export default {
-  data() {
-    return {
-      tabName: "ProfileCourseWorkView",
-    };
-  },
   components: {
     Header,
     ProfileHeaderView,
@@ -36,11 +31,6 @@ export default {
       return defineAsyncComponent(() =>
         import(`../components/${currentComponent}.vue`)
       );
-    },
-  },
-  methods: {
-    changeComponents(clickedtabName) {
-      this.tabName = clickedtabName;
     },
   },
 };

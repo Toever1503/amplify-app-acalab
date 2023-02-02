@@ -11,7 +11,7 @@ export default {
   mutations: {
     changeCurrentTab(state, payload) {
       // eslint-disable-next-line no-param-reassign
-      state.profileTab = payload.tabName;
+      state.profileTab = payload;
     },
   },
   // 비동기
