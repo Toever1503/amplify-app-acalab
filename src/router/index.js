@@ -14,6 +14,11 @@ export default createRouter({
       component: () => import("../views/Payment.vue"),
     },
     {
+      path: "/payment1",
+      name: "payment1",
+      component: () => import("../views/Payment1.vue"),
+    },
+    {
       path: "/uploadguide",
       name: "uploadguide",
       component: () => import("../views/UploadGuide.vue"),
