@@ -1,10 +1,7 @@
 {
   "permissions": {
     "storage": {
-      "acalabfilestore": [
-        "create"
-      ],
-      "Image:@model(appsync)": [
+      "acalabfiles3": [
         "create"
       ]
     }

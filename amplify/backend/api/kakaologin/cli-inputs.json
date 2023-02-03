@@ -7,6 +7,13 @@
       "permissions": {
         "setting": "open"
       }
+    },
+    "/signup-upload-image": {
+      "name": "/signup-upload-image",
+      "lambdaFunction": "signupuploadimage",
+      "permissions": {
+        "setting": "open"
+      }
     }
   }
 }

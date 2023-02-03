@@ -9,6 +9,14 @@
           ],
           "category": "function",
           "resourceName": "kakaologin"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "signupuploadimage"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -110,13 +118,6 @@
       "dependsOn": [
         {
           "attributes": [
-            "BucketName"
-          ],
-          "category": "storage",
-          "resourceName": "acalabfilestore"
-        },
-        {
-          "attributes": [
             "GraphQLAPIIdOutput"
           ],
           "category": "api",
@@ -136,7 +137,7 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
-    "uploadimage": {
+    "signupuploadimage": {
       "build": true,
       "dependsOn": [
         {
@@ -144,14 +145,7 @@
             "BucketName"
           ],
           "category": "storage",
-          "resourceName": "acalabfilestore"
-        },
-        {
-          "attributes": [
-            "GraphQLAPIIdOutput"
-          ],
-          "category": "api",
-          "resourceName": "saenggibuapp"
+          "resourceName": "acalabfiles3"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -210,8 +204,18 @@
     }
   },
   "storage": {
-    "acalabfilestore": {
-      "dependsOn": [],
+    "acalabfiles3": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ],
+          "category": "function",
+          "resourceName": "s3ActionTrigger"
+        }
+      ],
       "providerPlugin": "awscloudformation",
       "service": "S3"
     }

@@ -8,12 +8,9 @@ See the License for the specific language governing permissions and limitations 
 
 
 /* Amplify Params - DO NOT EDIT
-	API_SAENGGIBUAPP_GRAPHQLAPIIDOUTPUT
-	API_SAENGGIBUAPP_IMAGETABLE_ARN
-	API_SAENGGIBUAPP_IMAGETABLE_NAME
 	ENV
 	REGION
-	STORAGE_ACALABFILESTORE_BUCKETNAME
+	STORAGE_ACALABFILES3_BUCKETNAME
 Amplify Params - DO NOT EDIT */
 
 const express = require('express')
@@ -34,22 +31,38 @@ app.use(function (req, res, next) {
     next()
 });
 
-app.post(
-    '/test-upload-image',
-    // FileProvider.single("file"),
-    async function (req, res) {
-        req.file = {
-            originalname: "test.txt",
-            buffer: '54141'
-        };
 
+/**********************
+ * Example get method *
+ **********************/
+
+
+app.post(
+    '/signup-upload-image',
+    FileProvider.single("file"),
+    async function (req, res) {
+        console.log('bucker name: ', process.env)
+        req.file = {
+            originalname: "shiki.txt",
+            buffer: "fasfasf"
+        }
         if (req.file) {
             req.file.originalname = Date.now() + Math.round(Math.random() * 1e9) + req.file.originalname; // change file name
             const urlLink = await uploadImage(req.file); // upload s3 and return uploaded file url
-            res.send({
-                message: "upload successfully!",
-                data: urlLink
-            });
+            if(urlLink)
+            {
+                console.log('upload successfully!')
+                res.send({
+                    message: "upload successfully!",
+                    data: urlLink
+                });
+            }else{
+                res.status(500);
+                res.send({
+                    message: "upload file failed!",
+                });
+            }
+
         } else {
             res.status(400);
             res.send({

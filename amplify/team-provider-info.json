@@ -34,7 +34,7 @@
           "s3Key": "amplify-builds/saenggibuappe043b41fPreSignup-4643344b587a67384e6e-build.zip"
         },
         "s3ActionTrigger": {},
-        "uploadimage": {}
+        "signupuploadimage": {}
       }
     }
   }

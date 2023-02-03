@@ -16,10 +16,6 @@
         "s3Key": {
             "Type": "String"
         },
-        "storageacalabfilestoreBucketName": {
-            "Type": "String",
-            "Default": "storageacalabfilestoreBucketName"
-        },
         "apisaenggibuappGraphQLAPIIdOutput": {
             "Type": "String",
             "Default": "apisaenggibuappGraphQLAPIIdOutput"
@@ -77,9 +73,6 @@
                         },
                         "REGION": {
                             "Ref": "AWS::Region"
-                        },
-                        "STORAGE_ACALABFILESTORE_BUCKETNAME": {
-                            "Ref": "storageacalabfilestoreBucketName"
                         },
                         "API_SAENGGIBUAPP_IMAGETABLE_NAME": {
                             "Fn::ImportValue": {
@@ -220,43 +213,6 @@
                 "PolicyDocument": {
                     "Version": "2012-10-17",
                     "Statement": [
-                        {
-                            "Effect": "Allow",
-                            "Action": "s3:ListBucket",
-                            "Resource": [
-                                {
-                                    "Fn::Join": [
-                                        "",
-                                        [
-                                            "arn:aws:s3:::",
-                                            {
-                                                "Ref": "storageacalabfilestoreBucketName"
-                                            }
-                                        ]
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "Effect": "Allow",
-                            "Action": [
-                                "s3:GetObject"
-                            ],
-                            "Resource": [
-                                {
-                                    "Fn::Join": [
-                                        "",
-                                        [
-                                            "arn:aws:s3:::",
-                                            {
-                                                "Ref": "storageacalabfilestoreBucketName"
-                                            },
-                                            "/*"
-                                        ]
-                                    ]
-                                }
-                            ]
-                        },
                         {
                             "Effect": "Allow",
                             "Action": [

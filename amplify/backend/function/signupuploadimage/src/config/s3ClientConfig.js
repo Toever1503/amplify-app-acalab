@@ -14,11 +14,13 @@ const uploadImage = async (tmpFile) => {
         Body: tmpFile.buffer
     };
     try {
+        console.log('uploading file: ', params)
         let s3Response = await S3.upload(params).promise();
         return s3Response.Location;
 
     } catch (error) {
-        throw error.errorMessage;
+        console.log('upload file got error: ', error);
+        return null;
     }
 };
 
