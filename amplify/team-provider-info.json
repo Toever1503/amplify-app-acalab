@@ -23,16 +23,18 @@
       "function": {
         "kakaologin": {
           "deploymentBucketName": "amplify-saenggibuapp-dev-162125-deployment",
-          "s3Key": "amplify-builds/kakaologin-5276723644554a36587a-build.zip"
+          "s3Key": "amplify-builds/kakaologin-592b694b783768563870-build.zip"
         },
         "saenggibuappe043b41fPostConfirmation": {
           "deploymentBucketName": "amplify-saenggibuapp-dev-162125-deployment",
-          "s3Key": "amplify-builds/saenggibuappe043b41fPostConfirmation-4a4d63313042576a3251-build.zip"
+          "s3Key": "amplify-builds/saenggibuappe043b41fPostConfirmation-4b4a455a6e772f2b6471-build.zip"
         },
         "saenggibuappe043b41fPreSignup": {
           "deploymentBucketName": "amplify-saenggibuapp-dev-162125-deployment",
-          "s3Key": "amplify-builds/saenggibuappe043b41fPreSignup-3730764c68767366587a-build.zip"
-        }
+          "s3Key": "amplify-builds/saenggibuappe043b41fPreSignup-4643344b587a67384e6e-build.zip"
+        },
+        "s3ActionTrigger": {},
+        "uploadimage": {}
       }
     }
   }

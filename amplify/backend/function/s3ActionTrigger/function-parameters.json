@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "storage": {
+      "acalabfilestore": [
+        "read"
+      ],
+      "Image:@model(appsync)": [
+        "create"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

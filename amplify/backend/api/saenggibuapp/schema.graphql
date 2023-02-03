@@ -1,15 +1,30 @@
 # This "input" configures a global authorization rule to enable public access to
 # all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
-input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+input AMPLIFY {
+  globalAuthRule: AuthRule = { allow: public }
+} # FOR TESTING ONLY!
+
+##commment 저장 위치 고려해야함.
 
 type Member @model @searchable {
   id: ID!
-  nick: String!
+  nickName: String!
   password: String!
-  email: String! 
-  introLine: String
+  email: String!
+  image: Image @hasOne
+  selfIntroduction: String
   bankAccount: String!
   profile: Profile @hasOne
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Image @model {
+  id: ID!
+  member: Member @belongsTo
+  memberID: ID! @index(name: "byMember", queryField: "ImageByMemberID")
+  fileName: String!
+  url: AWSURL!
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
@@ -17,9 +32,15 @@ type Member @model @searchable {
 type Profile @model @searchable {
   id: ID!
   member: Member @belongsTo
+  memberID: ID! @index(name: "byMember", queryField: "ProfileByMemberID")
   academicInfo: AcademicInfo @hasOne
-  awardsInfo: [AwardsInfo] @hasMany
-  attendanceInfo: [AttendanceInfo] @hasMany
+  attendanceInfo: [AttendanceInfo] @hasMany(indexName: "byProfile", fields: ["id"])
+  awardsInfo: [AwardsInfo] @hasMany(indexName: "byProfile", fields: ["id"])
+  careerHopeInfo: [CareerHopeInfo] @hasMany(indexName: "byProfile", fields: ["id"])
+  experienceActivityInfo: ExperienceActivityInfo @hasOne
+  courseworkInfo: [CourseworkInfo] @hasMany(indexName: "byProfile", fields: ["id"])
+  readingActivityInfo: [ReadingActivityInfo] @hasMany(indexName: "byProfile", fields: ["id"])
+  behaviorCharactInfo: [BehaviorCharactInfo] @hasMany(indexName: "byProfile", fields: ["id"])
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
@@ -29,31 +50,128 @@ type AcademicInfo @model {
   region: String!
   type: String!
   name: String!
-  profile: Profile @belongsTo
-}
-
-type AwardsInfo @model {
-  id: ID!
-  title: String!
-  ranking: String
-  profile: Profile @belongsTo
-  grade: Grade! 
+  profile: Profile @belongsTo(fields: ["profileID"])
+  profileID: ID! @index(name: "byProfile", queryField: "academicInfoByProfileID")
 }
 
 type AttendanceInfo @model {
   id: ID!
-  classDays: Int  
-  absent: Int 
-  late: Int 
-  leaveEarly: Int 
-  disrupting: Int 
+  profileID: ID! @index(name: "byProfile", queryField: "attendanceInfoByProfileID")
+  profile: Profile @belongsTo(fields: ["profileID"])
+  grade: Grade!
+  classDays: Int
+  absent: Int
+  late: Int
+  leaveEarly: Int
+  disrupting: Int
   special: String
-  profile: Profile @belongsTo
-  grade: Grade! 
+}
+
+type AwardsInfo @model {
+  id: ID!
+  profileID: ID! @index(name: "byProfile", queryField: "awardsInfoByProfileID")
+  profile: Profile @belongsTo(fields: ["profileID"])
+  grade: Grade!
+  awardName: String!
+  ranking: String
+}
+
+type CareerHopeInfo @model {
+  id: ID!
+  profileID: ID! @index(name: "byProfile", queryField: "careerHopeInfoByProfileID")
+  profile: Profile @belongsTo(fields: ["profileID"])
+  grade: Grade!
+  specialty: String
+  careerHope: String
+  hopeReason: String
+}
+
+type ExperienceActivityInfo @model {
+  id: ID!
+  profileID: ID! @index(name: "byProfile", queryField: "experienceInfoByProfileID")
+  profile: Profile @belongsTo(fields: ["profileID"])
+  activity: [Activity] @hasMany
+  volunteerRecord: [VolunteerRecord] @hasMany
+}
+
+type Activity @model {
+  id: ID!
+  experienceActivityInfo: ExperienceActivityInfo @belongsTo
+  grade: Grade!
+  autonomous: String
+  club: String
+  volunteer: String
+  career: String
+}
+
+type VolunteerRecord @model {
+  id: ID!
+  experienceActivityInfo: ExperienceActivityInfo @belongsTo
+  grade: Grade!
+  recordList: [RecordList] @hasMany
+  totalVolunteerTime: Int
+}
+
+type RecordList @model {
+  id: ID!
+  volunteerRecord: VolunteerRecord @belongsTo
+  volunteerDetail: String!
+  volunteerTime: Int!
+}
+
+type CourseworkInfo @model {
+  id: ID!
+  profileID: ID! @index(name: "byProfile", queryField: "courseWorkInfoByProfileID")
+  profile: Profile @belongsTo(fields: ["profileID"])
+  grade: Grade!
+  semester: Semester!
+  subject: [Subject]! @hasMany
+}
+
+type Subject @model {
+  id: ID!
+  courseworkInfo: CourseworkInfo @belongsTo
+  subjectType: SubjectType!
+  subjectName: String!
+  unitNum: Int!
+  rawScore: String!
+  achieveLevel: String!
+  attendeeNum: Int!
+  subjectGrade: Int!
+  detailAbility: String
+}
+
+type ReadingActivityInfo @model {
+  id: ID!
+  profileID: ID! @index(name: "byProfile", queryField: "readingActivityInfoByProfileID")
+  profile: Profile @belongsTo(fields: ["profileID"])
+  grade: Grade!
+  subjectArea: String!
+  readingDetail: String!
+}
+
+type BehaviorCharactInfo @model {
+  id: ID!
+  profileID: ID! @index(name: "byProfile", queryField: "behaviorCharactInfoByProfileID")
+  profile: Profile @belongsTo(fields: ["profileID"])
+  grade: Grade!
+  content: String
 }
 
 enum Grade {
   FIRSTGRADE
   SECONDGRADE
   THIRDGRADE
+}
+
+enum Semester {
+  FIRSTSEMESTER
+  SECONDSEMESTER
+}
+
+enum SubjectType {
+  KOREAN
+  MATH
+  SOCIAL
+  SCIENCE
 }

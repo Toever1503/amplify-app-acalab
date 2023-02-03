@@ -1,0 +1,14 @@
+{
+  "resourceName": "acalabfilestore",
+  "policyUUID": "a440e783",
+  "bucketName": "acalabfilestorage",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}
