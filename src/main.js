@@ -1,12 +1,19 @@
 import { Amplify } from "aws-amplify";
 
 import { createApp } from "vue";
+import { createPinia } from "pinia";
 import awsExports from "./aws-exports";
-import store from "./app.store/index";
 
 import App from "./App.vue";
-import router from "./router/index";
+import router from "./router";
+
+import "./app.style/main.css";
 
 Amplify.configure(awsExports);
 
-createApp(App).use(router).use(store).mount("#app");
+const app = createApp(App);
+
+app.use(createPinia());
+app.use(router);
+
+app.mount("#app");

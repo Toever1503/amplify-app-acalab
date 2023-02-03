@@ -1,6 +1,11 @@
 <template>
   <div class="input-row">
-    <img emit src="/icon/delete-gray.png" alt="delete" @click="deleteRow" />
+    <img
+      emit
+      src="../assets/icon/delete-gray.png"
+      alt="delete"
+      @click="imgClick"
+    />
     <VueMultiselect
       class="input-univ"
       v-model="valueUniv"
@@ -49,8 +54,8 @@ export default {
     order: Number,
   },
   methods: {
-    deleteRow() {
-      this.$emit("deleteRow", this.order);
+    imgClick() {
+      this.$emit("imgClick", this.order);
     },
   },
   updated() {

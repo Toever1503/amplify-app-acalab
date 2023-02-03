@@ -4,19 +4,19 @@
       <div class="btn-prev">
         <RouterLink
           :to="prePage"
-          v-if="!preButtonHover"
-          @mouseover="preButtonOver"
+          v-if="preHere"
+          @mouseover="preOver"
           class="btn-prev:none"
         >
-          <img src="/icon/btn-arrow.png" alt="이전으로" />
+          <img src="../assets/icon/btn-arrow.png" alt="none" />
         </RouterLink>
         <RouterLink
           :to="prePage"
-          v-if="preButtonHover"
-          @mouseleave="preButtonLeave"
+          v-if="!preHere"
+          @mouseleave="preLeave"
           class="btn-prev:hover"
         >
-          <img src="/icon/btn-arrow-hover.png" alt="이전으로" />
+          <img src="../assets/icon/btn-arrow-hover.png" alt="none" />
         </RouterLink>
       </div>
       <span>이전으로</span>
@@ -26,19 +26,19 @@
       <div class="btn-next">
         <RouterLink
           :to="nextPage"
-          v-if="nextButtonHover"
-          @mouseover="nextButtonOver"
+          v-if="nextHere"
+          @mouseover="nextOver"
           class="btn-prev:none"
         >
-          <img src="/icon/btn-arrow.png" alt="다음으로" />
+          <img src="../assets/icon/btn-arrow.png" alt="none" />
         </RouterLink>
         <RouterLink
           :to="nextPage"
-          v-if="!nextButtonHover"
-          @mouseleave="nextButtonLeave"
+          v-if="!nextHere"
+          @mouseleave="nextLeave"
           class="btn-prev:hover"
         >
-          <img src="/icon/btn-arrow-hover.png" alt="다음으로" />
+          <img src="../assets/icon/btn-arrow-hover.png" alt="none" />
         </RouterLink>
       </div>
     </div>
@@ -49,8 +49,8 @@
 export default {
   data() {
     return {
-      preButtonHover: false,
-      nextButtonHover: false,
+      preHere: true,
+      nextHere: true,
     };
   },
   props: {
@@ -58,17 +58,17 @@ export default {
     nextPage: String,
   },
   methods: {
-    preButtonOver() {
-      this.preButtonHover = !this.preButtonHover;
+    preOver() {
+      this.preHere = !this.preHere;
     },
-    preButtonLeave() {
-      this.preButtonHover = !this.preButtonHover;
+    preLeave() {
+      this.preHere = !this.preHere;
     },
-    nextButtonOver() {
-      this.nextButtonHover = !this.nextButtonHover;
+    nextOver() {
+      this.nextHere = !this.nextHere;
     },
-    nextButtonLeave() {
-      this.nextButtonHover = !this.nextButtonHover;
+    nextLeave() {
+      this.nextHere = !this.nextHere;
     },
   },
 };

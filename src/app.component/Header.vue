@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="box-login">
-        <img src="/icon/person-gray.png" alt="로그인" />
+        <img src="../assets/icon/person-gray.png" alt="로그인" />
         <RouterLink class="link-login" to="/login"
           >로그인 | 회원 가입</RouterLink
         >
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import Logo from "./Logo.vue";
+import Logo from "./LogoTest.vue";
 
 export default {
   components: {
